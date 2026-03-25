@@ -3,7 +3,7 @@ import { Suspense, useState } from 'react'
 import './App.css'
 import Banner from './components/Homepage/Banner/Banner'
 import Players from './components/Homepage/Players/Players'
-
+ import { ToastContainer} from 'react-toastify';
 import Navbar from './components/Navbar/Navbar'
 
 const fetchPlayer=async()=>{
@@ -27,6 +27,8 @@ const handleAddCoin = (price) => {
    <Suspense fallback={<span className="loading loading-spinner text-success"></span>}>
     <Players playersPromise={playersPromise} setCoin={handleCoin} addCoin={handleAddCoin} coins={coins}/>
    </Suspense>
+
+     <ToastContainer />
     </>
   )
 }
